@@ -19,6 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   설명입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rldnddl87.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+repository: "rldnddl87/rldnddl87.github.io"
 twitter_username: jekyllrb
 github_username:  jekyll
 
