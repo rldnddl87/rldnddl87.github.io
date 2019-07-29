@@ -29,10 +29,12 @@ markdown: kramdown
 # theme: minima
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
-  - jekyll-feed
   - jekyll-paginate
-  - jekyll-include-cache
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
