@@ -1,1 +1,19 @@
 remote_theme           : "mmistakes/minimal-mistakes"
+inimal_mistakes_skin    : "default"
+
+# Site Settings
+locale : "en-US"
+title : "giung.song's Dev Blog"
+url : "https://rldnddl87.github.io"
+baseurl : ""
+repository : "rldnddl87/rldnddl87.github.io"
+
+
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
