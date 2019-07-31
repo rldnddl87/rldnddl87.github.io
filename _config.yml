@@ -2,11 +2,59 @@ remote_theme           : "mmistakes/minimal-mistakes"
 inimal_mistakes_skin    : "default"
 
 # Site Settings
-locale : "en-US"
-title : "giung.song's Dev Blog"
+locale : "ko-KR"
+title : "개발 블로그" # site title
+subtitle : "Developer Blog"
+name : "송기웅"
 url : "https://rldnddl87.github.io"
 baseurl : ""
 repository : "rldnddl87/rldnddl87.github.io"
+
+# Site Author
+author:
+  name : "송기웅"
+  avatar : "/assets/images/avatar.jpg"
+  bio : "고민하고 기록하는 공간입니다.💻😀"
+  location : "Seoul"
+  links :
+    - label : "Email"
+      icon : "fas fa-fw fa-envelope-square"
+      url : mailto:rldnddl87@gmail.com
+    - label : "GitHub"
+      icon : "fab fa-fw fa-github"
+      url : "https://github.com/rldnddl87"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://www.facebook.com/profile.php?id=100023557261732"
+
+
+search                   : true
+search_full_content      : true
+#search_provider
+
+comments:
+  provider               : "facebook"
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: Asia/Seoul
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+
+
 
 
 
@@ -17,3 +65,4 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+
