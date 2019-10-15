@@ -265,55 +265,17 @@ docker run -d -p 3306:3306 \
         </pre>
     - 빌드 과정
         <pre>        
-        ###Dockerfile의 기본 명령어###
-        FROM <image>:<tag>
-        # FROM ubuntu:16.04
-        # 베이스 이미지를 지정한다.<필수>
-        # tag는 latest보다는 구체적인 버전을 지정하는것이 좋으며 생성되어진 base는
-        # https://hub.docker.com/search/?q=&type=image 확인가능하다.
-        
-        MAINTAINER <name>
-        MAINTAINER giung.song@test.net
-        # Dockerfile을 관리하는 사람의 이름 또는 이메일 정보를 적는다 빌드에 영향 X
-        
-        COPY <src>... <dest>
-        COPY . /usr/src/app
-        # 파일, 폴더를 이미지로 복사한다. 일반적으로 소스 복사에 사용. 
-        # target(dest) 디렉토리가 없다면 자동으로 생성한다.
-        
-        ADD <src>... <dest>
-        ADD . /usr/src/app
-        # COPY 명령어와 유사하나 추가기능 존재
-        # src에 파일 대신 url을 입력할 수 있고 src에 압축 파일을 입력하는 경우 자동으로 압축해제한 뒤 복사된다.
-        
-        RUN <command>
-        RUN ["executable", "param1", "param2"]
-        RUN bundle install
-        # 가장 많이 사용하는 구문입니다. 명령어를 그대로 실행합니다.
-        # 내부적으로 /bin/sh -c 뒤에 명령어를 실행하는 방식
-        
-        CMD ["executable", "param1", "param2"]
-        CMD command param1 param2
-        CMD bundle exec ruby app.rb
-        # 도커 컨테이너가 실행되었을 경우 실행되는 명령어를 정의한다. 빌드할 때는 실행되지 않으며 여러개의 CMD가 존재할 경우 마지막 CMD만 실행
-        # 컨테이너 실행 후 여러 프로그램을 실행하고 싶을경우 run.sh같은 스크립트를 작성하여 데몬으로 실행한다.
-        
-        WORKDIR /path/to/workdir
-        # RUN, CMD, ADD, COPY등이 이루어질 기본 디렉토리를 설정한다.
-        # 각 명령어의 현재 디렉토리는 한줄 마다 초기화 되기 때문에... RUN cd /path 를 하더라도 다음 명령어에선 다시 위치가 초기화된다.
-        # 같은 디렉토리에서 작업하기 위해 WORKDIR를 사용한다.
-        
-        EXPOSE <port> [<port>...]
-        EXPOSE 4567
-        # 도커 컨테이너가 실행되었을 때 요청을 기다리고 있는(Listen) 포트를 지정. 여러 포트를 지정할 수 있다.
-        
-        VOLUME ["/data"]
-        #컨테이너 외부에 파일 시스템을 마운트 할 때 사용합니다. 반드시 지정하지 않아도 마운트 할 수 있지만, 기본적으로 지정하는것이 좋다. 컨테이너 상으로 함녀 컨테이너 종료되면 다 사라지니까~
-        
-        ENV <key> <value>
-        ENV <key>=<value> ...
-        ENV DB_URL mysql
-        # 컨테이너의 환경변수를 지정. 컨테이너 실행시 -e 옵션으로 환경변수를 따로 지정할 경우 기존 값을 오버라이딩 한다.        
+        Sending build context to Docker daemon  5.12 kB   <-- (1)
+        Step 1/10 : FROM ubuntu:16.04                     <-- (2)
+         ---> f49eec89601e                                <-- (3)
+        Step 2/10 : MAINTAINER subicura@subicura.com      <-- (4)
+         ---> Running in f4de0c750abb                     <-- (5)
+         ---> 4a400609ff73                                <-- (6)
+        Removing intermediate container f4de0c750abb      <-- (7)
+        Step 3/10 : RUN apt-get -y update                 <-- (8)
+        ...
+        ...
+        Successfully built 20369cef9829                   <-- (9)     
         </pre>
           
     - 순서
