@@ -268,7 +268,7 @@ docker run -d -p 3306:3306 \
         Sending build context to Docker daemon  5.12 kB   <-- (1)
         Step 1/10 : FROM ubuntu:16.04                     <-- (2)
          ---> f49eec89601e                                <-- (3)
-        Step 2/10 : MAINTAINER subicura@subicura.com      <-- (4)
+        Step 2/10 : MAINTAINER giung.song@stest.com       <-- (4)
          ---> Running in f4de0c750abb                     <-- (5)
          ---> 4a400609ff73                                <-- (6)
         Removing intermediate container f4de0c750abb      <-- (7)
