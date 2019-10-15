@@ -149,7 +149,7 @@ docker run -d -p 3306:3306 \
         ########################################
         #1. ubuntu 설치(패키지 업데이트 + 만든사람 표시)
         FROM       ubuntu:16.04
-        MAINTAINER giung.song@mement.com
+        MAINTAINER giung.song@test.com
         RUN        apt-get -y update
         
         #2. ruby 설치
@@ -186,7 +186,7 @@ docker run -d -p 3306:3306 \
         
         ###########################요약##################################
         FROM        ubuntu:16.04
-        MAINTAINER  giung.song@mement.net
+        MAINTAINER  giung.song@test.net
         RUN         apt-get -y update
         
         RUN  apt-get -y install ruby
@@ -202,7 +202,7 @@ docker run -d -p 3306:3306 \
         #################################################################
         #########################최적화###################################
         FROM ruby:2.3
-        MAINTAINER subicura@subicura.com
+        MAINTAINER giung.song@test.com
         COPY Gemfile* /usr/src/app/
         WORKDIR /usr/src/app
         RUN bundle install --no-rdoc --no-ri
@@ -221,7 +221,7 @@ docker run -d -p 3306:3306 \
         # https://hub.docker.com/search/?q=&type=image 확인가능하다.
         
         MAINTAINER <name>
-        MAINTAINER giung.song@mement.net
+        MAINTAINER giung.song@test****.net
         # Dockerfile을 관리하는 사람의 이름 또는 이메일 정보를 적는다 빌드에 영향 X
         
         COPY <src>... <dest>
@@ -273,7 +273,7 @@ docker run -d -p 3306:3306 \
         # https://hub.docker.com/search/?q=&type=image 확인가능하다.
         
         MAINTAINER <name>
-        MAINTAINER giung.song@mement.net
+        MAINTAINER giung.song@test.net
         # Dockerfile을 관리하는 사람의 이름 또는 이메일 정보를 적는다 빌드에 영향 X
         
         COPY <src>... <dest>
