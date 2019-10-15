@@ -315,6 +315,7 @@ docker run -d -p 3306:3306 \
         ENV DB_URL mysql
         # 컨테이너의 환경변수를 지정. 컨테이너 실행시 -e 옵션으로 환경변수를 따로 지정할 경우 기존 값을 오버라이딩 한다.
         </pre>
+        
         1. 임시 컨테이너 생성
         2. 명령어 수행
         3. 이미지로 저장
@@ -414,6 +415,7 @@ apt-get install gradle
 </pre>
        
 <pre>
+
 FROM 		ubuntu:19.10
 MAINTAINER  giung.song@test.net
 RUN 		apt-get update
