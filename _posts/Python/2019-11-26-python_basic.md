@@ -7,8 +7,6 @@ comments : true
 author_profile: false
 ---
 
-# Python 기초
----
 - Data types
     - 기본 데이터 타입   
         <pre>
@@ -141,75 +139,74 @@ author_profile: false
      > 클래스 안에 선언핸 함수를 메서드라고 칭하며 모든 메서드들은
        하나의 argument를 기본적으로 함께 사용한다 => self를 사용한다
        이때 클래스를 통해 생성된 인스턴스 그 자신을 나타낸다. 자바의 this와 같다.
-    <pre>
-    class Car():
-        wheels = 4
-        doors = 4
-        windows = 4
-        seats = 4
+        <pre>
+        class Car():
+            wheels = 4
+            doors = 4
+            windows = 4
+            seats = 4
+            
+            def start(self):
+                print(self)
+                # print(self.color)
+                print("I started")
         
-        def start(self):
-            print(self)
-            # print(self.color)
-            print("I started")
-    
-    avante = Car()
-    avante.color = "Silver"
-    avante.start()
-    
-    # print(avante)를 통해 나오는 결과는 객체를 생성했을때 기본적으로 생성되는 내장함수중 하나를 호출한다  => __str__
-    # print(dir(avante))를 통해 기본 생성되는 객체의 함수를 확인 가능하다.
-    </pre>
-    <pre>
-    class Car():
-        # 기본 함수인 __init__ 함수(메서드)를 재정의(over write) 하였다.
-        def __init__(self, *args, **kwargs): 
-            self.wheels = 4
-            self.doors = 4
-            self.windows = 4
-            self.seats = 4
-            self.color = kwargs.get("color", "black") # keword arguments중 "color"를 찾고 없으면 기본값으로 black을 할당한다.
-            self.price = kwargs.get("price", "$999)
+        avante = Car()
+        avante.color = "Silver"
+        avante.start()
         
-        def start(self):
-            print(self)
-            print(self.color)
-            print("I started")
+        # print(avante)를 통해 나오는 결과는 객체를 생성했을때 기본적으로 생성되는 내장함수중 하나를 호출한다  => __str__
+        # print(dir(avante))를 통해 기본 생성되는 객체의 함수를 확인 가능하다.
+        </pre>
+        <pre>
+        class Car():
+            # 기본 함수인 __init__ 함수(메서드)를 재정의(over write) 하였다.
+            def __init__(self, *args, **kwargs): 
+                self.wheels = 4
+                self.doors = 4
+                self.windows = 4
+                self.seats = 4
+                self.color = kwargs.get("color", "black") # keword arguments중 "color"를 찾고 없으면 기본값으로 black을 할당한다.
+                self.price = kwargs.get("price", "$999)
+            
+            def start(self):
+                print(self)
+                print(self.color)
+                print("I started")
+            
+            def __str__(self):
+                return f"over write and Car with {self.wheels} wheels"
+            
+        kona = Car(color = "Red", price = "$500")
+        kona.color = "Green"
         
-        def __str__(self):
-            return f"over write and Car with {self.wheels} wheels"
+        # kona.start()
+        # print(dir(Car))
         
-    kona = Car(color = "Red", price = "$500")
-    kona.color = "Green"
-    
-    # kona.start()
-    # print(dir(Car))
-    
-    # print(kona)
-    # print(kona.color, kona.price)
-    
-    mini = Car()
-    # print(mini.color, mini.price)
-    
-    ######### inheritance or extends ###########
-    class Convertible(Car):
-        def __init(self, **kwargs):
-            super().__init__(**kwargs) # 자바에서 상위 클래스에 접근하는 super와 동일하다
-            self.time = kwargs.get("time", 10)
+        # print(kona)
+        # print(kona.color, kona.price)
         
-        def take_off(self):
-            return "taking off the roof"
+        mini = Car()
+        # print(mini.color, mini.price)
         
-        def __str__(self):
-            return "car with no roof"
-    
-    porche = Convertible(color="Yellow", price ="$5000")
-    
-    print(porche.take_off())
-    print(porche.wheels)
-    print(porche)
-    print(porche.color)
-    print(porche.time)                 
-    </pre>
+        ######### inheritance or extends ###########
+        class Convertible(Car):
+            def __init(self, **kwargs):
+                super().__init__(**kwargs) # 자바에서 상위 클래스에 접근하는 super와 동일하다
+                self.time = kwargs.get("time", 10)
+            
+            def take_off(self):
+                return "taking off the roof"
+            
+            def __str__(self):
+                return "car with no roof"
+        
+        porche = Convertible(color="Yellow", price ="$5000")
+        
+        print(porche.take_off())
+        print(porche.wheels)
+        print(porche)
+        print(porche.color)
+        print(porche.time)                 
+        </pre>
 
->
