@@ -14,43 +14,43 @@ author_profile: false
 1. commend line arguments / program arguments 사용하기
     - IDE 사용시 program arguments에 적용 가능하다.
     - 배포 후 jar파일을 실행시 커맨드라인 알규먼츠로 설정 가능하다.
-<pre>
-java -jar app.jar --spring.config.additional-location=file:/application-api.yml
-</pre>
-> 윈도우 + WSL환경일 경우 WSL에서 파일을 생성하고(리눅스) IDE를 통해서 program arguments로 설정해 주어도 적용이 되지 않는다.
-IDE는 윈도우 파일 시스템 경로를 찾기 때문  
-또한, 기본 application.properties에 additional-location을 추가해도 제대로 인식이 되지 않는다.
-이는 applicational-location이 default properties location(application.properties)보다 먼저 인식되기 때문이다.
+    <pre>
+    java -jar app.jar --spring.config.additional-location=file:/application-api.yml
+    </pre>
+    > 윈도우 + WSL환경일 경우 WSL에서 파일을 생성하고(리눅스) IDE를 통해서 program arguments로 설정해 주어도 적용이 되지 않는다.
+    IDE는 윈도우 파일 시스템 경로를 찾기 때문  
+    또한, 기본 application.properties에 additional-location을 추가해도 제대로 인식이 되지 않는다.
+    이는 applicational-location이 default properties location(application.properties)보다 먼저 인식되기 때문이다.
 
 2. SpringApplicationBuilder 사용하기
-<pre>
-@SpringBootApplication
-public class SpringBootExternalPropertiesApplication {
-
-    public static void main(String[] args) {
-        new SpringApplicationBuilder(SpringBootExternalPropertiesApplication.class)
-                .properties("spring.config.additional-location=c:/application-api.yml")
-                .run(args);
+    <pre>
+    @SpringBootApplication
+    public class SpringBootExternalPropertiesApplication {
+    
+        public static void main(String[] args) {
+            new SpringApplicationBuilder(SpringBootExternalPropertiesApplication.class)
+                    .properties("spring.config.additional-location=c:/application-api.yml")
+                    .run(args);
+        }
+    
     }
-
-}
-
-</pre>
+    
+    </pre>
 
 3. PropertySourcesPlaceholderConfigurer 이용하기
-<pre>
-@Configuration
-public class AppConfig {
-
-    @Bean
-    public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        PropertySourcesPlaceholderConfigurer properties = new PropertySourcesPlaceholderConfigurer();
-        YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
-        yaml.setResources(new ClassPathResource("application-api.yml"));
-
-        properties.setProperties(yaml.getObject());
-        properties.setIgnoreResourceNotFound(false);
-        return properties;
+    <pre>
+    @Configuration
+    public class AppConfig {
+    
+        @Bean
+        public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+            PropertySourcesPlaceholderConfigurer properties = new PropertySourcesPlaceholderConfigurer();
+            YamlPropertiesFactoryBean yaml = new YamlPropertiesFactoryBean();
+            yaml.setResources(new ClassPathResource("application-api.yml"));
+    
+            properties.setProperties(yaml.getObject());
+            properties.setIgnoreResourceNotFound(false);
+            return properties;
+        }
     }
-}
-</pre>
+    </pre>
