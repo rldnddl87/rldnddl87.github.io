@@ -6,8 +6,10 @@ date: 2020-05-8T14:00:00Z
 comments: true
 author_profile: false
 ---
+
 - 이전 회사에서 CentOS를 사용하여 배포하거나 WSL에 설치된 Ubuntu 사용시 명령어가 익숙지 않았다.  
 그때마다 필요한 내용들을 검색해서 사용하곤 했었는데 가볍게 공부하며 정리하기위해 책을 구입했다.
+
 ---
 1. 외부 PC 조정하기 - ssh
     - SSH(Secure Shell) 사용
