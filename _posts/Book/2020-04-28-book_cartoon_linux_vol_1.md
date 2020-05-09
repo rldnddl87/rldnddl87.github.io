@@ -2,7 +2,7 @@
 title : 만화로 배우는 리눅스 시스템 관리 vol1 - 명령어 & 셸 스크립트 입문(~ing)
 categories : [Book]
 tags: [Infra, 환경구성]
-date: 2019-07-29T14:00:00Z
+date: 2020-05-8T14:00:00Z
 comments: true
 author_profile: false
 ---
