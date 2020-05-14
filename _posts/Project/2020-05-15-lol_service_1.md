@@ -15,7 +15,7 @@ author_profile: false
 ---
 ## 프로젝트는 왜 만드는 건가요?
 - 그동안 개발 공부를 하면서 느끼전 점은 인강을 듣고 책으로 코드를 보는것은 기억에 오래 남지 않는다고 느꼇습니다.
-- 교육자 박재성님의 [영상](https://www.youtube.com/watch?v=fXIpMyrI3U8)과 노마드 코더스 니콜라스 의 [영상](https://www.youtube.com/watch?v=FF6CF8TZIhE&t=12s)에서도 강조하는 점은 결국 자기주도적으로 고민하고 스스로 개발 목표를 구현하면서 학습하는 것이 중요하다는 점입니다.
+- 교육자 박재성님의 [영상](https://www.youtube.com/watch?v=fXIpMyrI3U8)과 노마드 코더스 니콜라스의 [영상](https://www.youtube.com/watch?v=FF6CF8TZIhE&t=12s)에서도 강조하는 점은 결국 자기주도적으로 고민하고 스스로 개발 목표를 구현하면서 학습하는 것이 중요하다는 점입니다.
     > 거기다 채용 공고에서는 항상 서비스를 개발후 런칭한 점을 우대사항에 적어놓은 곳이 참 많습니다..
 
 ---
@@ -23,7 +23,7 @@ author_profile: false
 
 ![](/assets/images/posts/2020-05-15/image01.jpg)
 
-- 이번 포스트에서는
+- 이번 포스팅에서는
   - 라이엇이 제공하는 API를 이용합니다.
     - 챌린저 랭커 목록 제공 API([여기를 살펴봐 주세요!](https://developer.riotgames.com/apis#league-v4/GET_getChallengerLeague))
   - API 접근 키를 깃과 서비스 외부에 노출되지 않도록 프로젝트 외부에 설정파일을 작성합니다.
@@ -45,7 +45,7 @@ author_profile: false
 
 - __API접근에 필요한 API KEY를 저장하겠습니다.__
   - vim을 이용하여 파일을 생성합니다 파일의 확장자는 .yml로 작성합니다.
-  ![](/assets/images/posts/2020-05-15/image04.png)
+    ![](/assets/images/posts/2020-05-15/image04.png)
   - 저는 <code>/app/config/app-config.yml</code> 경로에 생성하였습니다.
     > 윈도우 환경에서 개발하시는 분들이라면 wsl2 + vscode(remote wsl extension)를 사용해보시길 권장합니다. 위와 같이 wsl2에 파일을 설정하고 /app/config와 같이 linux파일 경로로 접근이 가능합니다.  
     모든 환경 구성을 wsl2(리눅스)에 셋팅하고 vscode를 통해 윈도우 환경에서 편집 및 접근이 가능합니다.  
@@ -61,7 +61,7 @@ author_profile: false
   - 기존의 application.yml이외에 위에서 작성한 app-config.yml파일에 접근 가능하도록 스프링 애플리케이션 빌더를 이용하여 아래와 같이 설정합니다.
   ![](/assets/images/posts/2020-05-15/image06.png)  
   - 설정파일을 자바 코드로 접근가능하도록 @ConfigurationProperties를 이용하여 설정합니다.
-  ![](/assets/images/posts/2020-05-15/image09.png)
+    ![](/assets/images/posts/2020-05-15/image09.png)
     - 이제 RiotProperties가 빈으로 등록되었습니다.  
   
   - __이제 API주소를 이용해서 호출해야 합니다.__
@@ -108,7 +108,8 @@ author_profile: false
 
     - __Api를 실제로 호출해 보겠습니다.__
        - 우선 임시로 작성한 컨트롤러를 통해 이미지의 saveChallengerRanking() 서비스를 호출할수 있도록 합니다.
-        ![](/assets/images/posts/2020-05-15/image13.png)
+        ![](/assets/images/posts/2020-05-15/image13.png)  
+
         ![](/assets/images/posts/2020-05-15/image12.png)
         > 해당 작업은 추후에 배치작업과 같이 일정 시간마다 호출되어 db를 업데이트 하도록 변경할 예정입니다.
        - 메서드를 살펴보면 이전에 WebClientBuilder를 통해 설정한 헤더와 baseUrl에 추가로 상세 API주소를 추가합니다.
@@ -148,6 +149,15 @@ author_profile: false
     
 ---
 > 마무리
+
+  - 프로젝트를 시작하면서 느낀점은 역시 재밌다입니다.
+  - 책이나 인강으로 학습하던 것과는 달리 "자기 주도적"으로 재밌게 공부할 수 있었습니다.
+  - Jpa 1:N 관계등 Jpa에 정말 많이 부족하다고 느꼈습니다.
+  - 테스트 코드 작성시 기존의 어플리케이션을 구동할때 자동으로 주입되던 의존성중 일부는 사용할 수 없기 때문에 작성하는데 고생을 좀 했습니다.
+  - 테스트 코드 작성도 더 공부해야 겠습니다.
+  - 생각보다 내가 가지고 있는 생각을 글로써 표현하는게 쉽지 않네요. 포스팅 내용이 매끄럽지 못한것 같습니다. 
+  - 꾸준히 공부하고 프로젝트 진행과정 블로그에 포스팅 하겠습니다.
+
    
 
    
