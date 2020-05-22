@@ -50,6 +50,8 @@ author_profile: false
       - ssh로 서버 접속 후 <code>tmux</code> 명령어 실행
       - 접속이 끊어진 뒤에도 다시 ssh 연결한 뒤 <code>tmux attach</code>입력하면 작업 중이던 가상 터미널로 복귀된다.
       - 작업 중이던 tmux에서 강제로 빠져나오기 : ctrl + b and d(detach) //오래 걸래는 작업도중 ssh를 종료할 수 있다.
+      - <code>ctrl + b s</code>  : 실행된 모든 tmux 세션 리스트 보기
+      - <code>tmux a -t 2</code> : 실행중인 tmux 세션 중 특정한 세션에 접속하기
       - <code>Ctrl + B</code>이후에 입력키 들로 관리한다.(기존의 다른 명령어와 겹치지 않도록)
           - D(Detach) : 실행 중이던 tmux 가상 터미널에서 빠져나오기
           - C(Create) : 또 다른 가상 터미널 생성하기
