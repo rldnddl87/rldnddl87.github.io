@@ -13,7 +13,7 @@ author_profile: false
 ---
 1. __외부 PC 조정하기 - ssh__
    - SSH(Secure Shell) 사용
-   - 명령어 : <code> ssh 사용자명@네트워크주소</code>  
+   - 명령어 : <code>ssh 사용자명@네트워크주소</code>  
     
 2. __임시로 관리자 권한 얻기 - sudo__
    - root는 모든 권한을 가지기 때문에 로그인을 막음
@@ -147,15 +147,15 @@ author_profile: false
     - <code>xzcat</code> : xz형식 용(.xz 파일)
     - <code>unzip</code>
     - 현재 추가되는 로그만 보고 싶어
-    - <code>tail -F access.log</code> : tail은 파일의 끝부분만 출력한다 -F를 통해 파일에 변경된 내용들만 출력할 수 있다.
-    - tail명령어와 grep을 파이프라인으로 연결하면... : 원하는 내용이 추가될 경우만 실시간 확인이 가능!!
+      - <code>tail -F access.log</code> : tail은 파일의 끝부분만 출력한다 -F를 통해 파일에 변경된 내용들만 출력할 수 있다.
+      - tail명령어와 grep을 파이프라인으로 연결하면... : 원하는 내용이 추가될 경우만 실시간 확인이 가능!!
     - 텍스트를 다루는 명령어를 그룹화해 보자
-    - 파일 내용을 다음 명령어에 출력하는 시작 그룹
-      - cat / zcat / xzcat / tail -F 등
-    - 중간에서 이전 명령어 출력을 가공하는 중간 그룹
-      - grep(해당하는 라인만 출력) / sort(정렬) / cut(잘라내기) / uniq(중복 제거) / sed,awk(내용 변경)
-    - 이전 명령어 출력을 가공하는 최종 그룹
-      - less(스크롤 할 수 있게 출력) / tee(파일을 저장) / wc(줄 수나 문자 수를 카운트) / head(첫 부분만 추출)
+      - 파일 내용을 다음 명령어에 출력하는 시작 그룹
+        - cat / zcat / xzcat / tail -F 등
+      - 중간에서 이전 명령어 출력을 가공하는 중간 그룹
+        - grep(해당하는 라인만 출력) / sort(정렬) / cut(잘라내기) / uniq(중복 제거) / sed,awk(내용 변경)
+      - 이전 명령어 출력을 가공하는 최종 그룹
+        - less(스크롤 할 수 있게 출력) / tee(파일을 저장) / wc(줄 수나 문자 수를 카운트) / head(첫 부분만 추출)
 
 14. __작업 절차를 자동화하고 싶어(셸 스크립트)__
     - 파이프 라인이 명령어를 가로로 연결한다면 스크립트는 세로로 연결한다.
@@ -195,16 +195,16 @@ author_profile: false
     - <code>${HOME} OR $HOME</code> 사용자 홈 디렉터리 참조.
     - <code>env</code> 명령어로 실행가능한 모든 환경변수를 알 수 있다.
     - 주요 환경변수
-    - <code>HOME</code> : 사용자 홈 디렉터리 경로
-    - <code>PWD</code> : 현재 디렉토리 경로
-    - <code>EDITOR</code> : 정해진 텍스트 에디터(vim, nano 등) 경로
-    - <code>PAGER</code> : 정해진 페이저(less, lv 등) 경로
-    - <code>USER</code> : 현재 사용자의 사용자명
-    - <code>GROUP</code> : 현재 사용자의 그룹명
-    - <code>HOSTNAME</code> : 현재 머신의 호스트명
+      - <code>HOME</code> : 사용자 홈 디렉터리 경로
+      - <code>PWD</code> : 현재 디렉토리 경로
+      - <code>EDITOR</code> : 정해진 텍스트 에디터(vim, nano 등) 경로
+      - <code>PAGER</code> : 정해진 페이저(less, lv 등) 경로
+      - <code>USER</code> : 현재 사용자의 사용자명
+      - <code>GROUP</code> : 현재 사용자의 그룹명
+      - <code>HOSTNAME</code> : 현재 머신의 호스트명
      
     - 명령어 치환
-    - <code>$(명령어열) or `명령어열`</code> 로 작성시 해당 명령어열의 결과가 문자열로 치환된다.
+      - <code>$(명령어열) or `명령어열`</code> 로 작성시 해당 명령어열의 결과가 문자열로 치환된다.
     - 특정 파일을 그 날짜명으로 변경하는 스크립트를 설정해야 할 경우
       - <code>date</code> 입력시 날짜 정보 출력 <code>Thu May 21 22:53:26 KST 2020</code>
       - <code>date +%Y-%m-%d</code>와 같이 형식 지정 가능
@@ -228,15 +228,15 @@ author_profile: false
 18. __같은 내용의 줄을 세어보고 싶어__
     - 17번에 이어서 이제 원하는 로그의 내용만 출력이 되서 나올 것이다
     - <code>cat /var/log/apache2/access.log | grep -v "/live" | cut -d " " -f 7</code>
-    - <code>sor</code> : 알파벳 순으로 정렬
+    - <code>sort</code> : 알파벳 순으로 정렬
     - <code>uniq</code> : 중복을 제거 하되 이어서 출력되는 중복만 제거된다.
-    <pre>
-    test
-    test
-    and
-    test
-    test 
-    </pre>
+      <pre>
+      test
+      test
+      and
+      test
+      test 
+      </pre>
     - 위의 문자열을 uniq로 처리 시 다음과 같다.
       <pre>
       test
@@ -271,98 +271,98 @@ author_profile: false
       - cut 명령어의 -f는 여러 숫자를 지정하거나 범위를 지정하는것도 가능하다.
       - <code> cat file.csv | cut -d "," -f 1-3</code> csv파일은 , 구분자인 텍스트 이므로 이를 기준으로 나누고 지우고자 하는 란을 제외한 범위를 cut을 이용하여 제거한다.
       -  sort 명령어 또한 특정 내용을 기준으로 정렬할 수 있는데 cut과 동일한 내용을 뜻하지만 명령어는 다르므로 주의해야 한다.
-      - <cod>sort -t "," -k 3</code>-t로 구분자를 -k로 위치를 지정한다.
-      - sort 사용시 1.~ , 2, .... , 11, 등이 있을경우 옵션울 주지 않으면 앞에서부터 차례대로 비교하여 1. 11. .... 2와 같이 비교하게 된다. 이럴 경우 숫자 정렬로 인식한다는 -n 옵션을 추가하면 된다.
+      - <code>sort -t "," -k 3</code> -t로 구분자를 -k로 위치를 지정한다.
+      - sort 사용시 1.~ , 2, .... , 11, 등이 있을경우 스페이스가 1보다 우선순위가 높기 때문에 오른쪽 정렬일 경우 문제가 되지 않지만 왼쪽 정렬일 경우 옵션을 주지 않으면 앞에서부터 차례대로 비교하여 1. 11. .... 2와 같이 비교하게 된다. 이럴 경우 숫자 정렬로 인식한다는 -n 옵션을 추가하면 된다.
       - 리다이렉트를 이용하여 명령어의 결과를 파일로 저장한다.
-        - <code> > </code> 이미 파일이 있으면 지우고 새로운 파일로 대체한다.
+        - <code>></code> 이미 파일이 있으면 지우고 새로운 파일로 대체한다.
         - <code>>></code> 이미 파일이 있으면 파일의 마지막에 내용을 추가한다.
 
 20. __명령줄 지정으로 작업 내용을 바꾸고 싶어__
     - 스크립트를 실행할 때 명령어 라인 인수를 통해 스크립트 실행시 마다 인수를 달리할 수 있다.
     - 스크립트 파일 안에서 <code>$1</code>과 같이 작성하고 스크립트 실행시 인수를 주면 해당 내용에 적용이된다.
     - 스크립트마다 처리할 파일명들이 달라질 경우 유용하게 사용 가능하다.
-    <pre>
-    #!/bin/bash
-    echo "$1"
-    </pre>
+      <pre>
+      #!/bin/bash
+      echo "$1"
+      </pre>
     - 위와 같은 스크립트가 있고 이를 /test.sh giung 과 같이 사용 가능하다.
     - 여러개의 명령어 라인 인수를 할당하고 스크립트에서 다른 변수로 접근하는 경우 아래와 같이 사용한다.
-    <pre>
-     #스크립트 실행시
-     ./test.sh -d today -p java  -o /home/giung 
-     #여러 변수를 할당하고 이를 스크립트에서 재 할당할 경우
+      <pre>
+      #스크립트 실행시
+      ./test.sh -d today -p java  -o /home/giung 
+      #여러 변수를 할당하고 이를 스크립트에서 재 할당할 경우
 
-     #!/bin/bash
+      #!/bin/bash
 
-     while getopts b: OPT
-     do
-      case $OPT in
-        d) default="$OPTARG" ;;
-        p) program="$OPTARG" ;;
-      esac         #case를 거꾸로 적은것
-     done
+      while getopts b: OPT
+      do
+        case $OPT in
+          d) default="$OPTARG" ;;
+          p) program="$OPTARG" ;;
+        esac         #case를 거꾸로 적은것
+      done
 
-     echo ${default}
-    </pre>
+      echo ${default}
+      </pre>
 
 21. __조건에 따라 처리 흐름을 바꾸고 싶어(조건 분기)__
     - 스크립트의 대부분이 동일하지만 일부 조건에 따라 내용이 달라질경우
-    <pre>
-    if [ $# = 2 ]  # $#은 스크립트에 지정한 인수 개수를 의미한다. [ 사이는 띄어 써야 한다. ]
-    then
-    echo "Hello!"
-    fi # if를 거꾸로한 것으로 처리가 종료된 것을 의미한다.
-    </pre>
+      <pre>
+      if [ $# = 2 ]  # $#은 스크립트에 지정한 인수 개수를 의미한다. [ 사이는 띄어 써야 한다. ]
+      then
+      echo "Hello!"
+      fi # if를 거꾸로한 것으로 처리가 종료된 것을 의미한다.
+      </pre>
 22. __명령어 이상 종료에 대응하고 싶어(종료상태)__
     - <code>$?</code> 21번에 작성한 if문에 $?를 사용할 수 있고 이는 바로 전에 실행한 명령어 종료 상태이다. 0은 성공을 뜻한다.
     - 콘솔 창에 ll과 같이 간단한 명령어를 실행하고 <code>echo $?</code>를 입력하면 성공시 0이 출력될 것이다.
     - <code>if [ $? != 0 ]; then exit; fi</code> if문을 1줄로 작성하고자 한다면 줄 바꿈대신 ;를 사용하면 여러줄을 한줄로 작성 가능하다.
     - <code>exit 0 or 1</code>if문 마지막 exit에 0 또나 1을 인수로 주면 그것이 해당 스크립트의 종료 상태가 된다. 0은 정상 1은 비정상 종료이다.
 
-23. 같은 처리를 반복해서 실행하고 싶어(for)   
+23. __같은 처리를 반복해서 실행하고 싶어(for)__   
     - 여러 파일에(파일명은 다르지만) 같은 처리를 반복해서 적용하고자 할 경우
-    <pre>
-    #!/bin/bash
+      <pre>
+      #!/bin/bash
 
-    for filename in redmine.log kintai.log download.log
-    do
-      ./create-report.sh $filename
-    done
-    </pre>
-    - for문 안에서도 명령어 치환이 가능하다.
-    <pre>
-    #!/bin/bash
+      for filename in redmine.log kintai.log download.log
+      do
+        ./create-report.sh $filename
+      done
+      </pre>
+      - for문 안에서도 명령어 치환이 가능하다.
+      <pre>
+      #!/bin/bash
 
-    for filename in cd /var/logs; ls *.log
-    do
-    ~
-    done
-    </pre>   
+      for filename in cd /var/logs; ls *.log
+      do
+      ~
+      done
+      </pre>   
     - if문과 for문 한줄 작성시 주의할점 
       - <code>for file in data log scripts; do echo $file; done</code> do 뒤에는 ;를 붙이지 않는다.
       - <code>if [ $1 = "" ]; then echo $1; fi</code> then 뒤에는 ;를 붙이지 않는다.
   
-  1.  공통 처리를 계속 재사용하고 싶어(셸 함수)  
+24. __공통 처리를 계속 재사용하고 싶어(셸 함수)__  
     - 셸 스크립트 일부에 이름을 붙여 함수로 만들 수 있다.
-    <pre>
-    #!/bin/bash
+      <pre>
+      #!/bin/bash
 
-    hello() {
-      echo "$1"
-      ..처리..
-      .. 처리
+      hello() {
+        echo "$1"
+        ..처리..
+        .. 처리
 
-      return 1  # return을 만나면 함수가 종료된다.
-    }
+        return 1  # return을 만나면 함수가 종료된다.
+      }
 
-    hello giung # 함수 호출 + 인수값 전달
-    </pre>  
+      hello giung # 함수 호출 + 인수값 전달
+      </pre>  
     - if문에서 exit는 스크립트의 종료상태를 반환하지만 함수에서 return은 함수의 종료상태를 반환한다.
-    <pre>
+      <pre>
 
-    tody() {
-      date +%Y-%m-%d
-    }
+      tody() {
+        date +%Y-%m-%d
+      }
 
-    echo $(today) #함수 실행 결과는 명령어 실행 결과의 문자열이 된다.
-    </pre>
+      echo $(today) #함수 실행 결과는 명령어 실행 결과의 문자열이 된다.
+      </pre>
