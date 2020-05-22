@@ -202,6 +202,7 @@ author_profile: false
     - <code>USER</code> : 현재 사용자의 사용자명
     - <code>GROUP</code> : 현재 사용자의 그룹명
     - <code>HOSTNAME</code> : 현재 머신의 호스트명
+  
   - 명령어 치환
     - <code>$(명령어열) or `명령어열`</code>로 작성시 해당 명령어열의 결과가 문자열로 치환된다.
     - 특정 파일을 그 날짜명으로 변경하는 스크립트를 설정해야 할 경우
