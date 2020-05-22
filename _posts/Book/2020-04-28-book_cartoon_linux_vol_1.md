@@ -202,8 +202,9 @@ author_profile: false
     - <code>USER</code> : 현재 사용자의 사용자명
     - <code>GROUP</code> : 현재 사용자의 그룹명
     - <code>HOSTNAME</code> : 현재 머신의 호스트명
+     
   - 명령어 치환
-    - <code>$(명령어열) or `명령어열`</code>로 작성시 해당 명령어열의 결과가 문자열로 치환된다.
+    - <code>$(명령어열) or `명령어열`</code> 로 작성시 해당 명령어열의 결과가 문자열로 치환된다.
     - 특정 파일을 그 날짜명으로 변경하는 스크립트를 설정해야 할 경우
       - <code>date</code> 입력시 날짜 정보 출력 <code>Thu May 21 22:53:26 KST 2020</code>
       - <code>date +%Y-%m-%d</code>와 같이 형식 지정 가능
