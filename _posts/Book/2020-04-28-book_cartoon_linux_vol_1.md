@@ -107,7 +107,7 @@ author_profile: false
   - -r(recursively) 옵션 등을통해 폴더 하위 파일들까지 전부 복사 가능
 
 11. __시스템 과부하를 파악하고 싶어(top)__
-  ![](/assets/images/posts/2020-04-28/top.png){: width="50%"}
+  ![](/assets/images/posts/2020-04-28/top.png){: width="80%"}
   - top 명령어를 통해 현재 시스템 사용 정보를 알 수 있다.
   - 이 중, load average를 통해 부하상태를 쉽게 알 수있다.(CPU가 처리하길 기다리는 작업의 개수를 나타냄, 1분당 평균으로 나타냄)
   - %CPU란과 Time+를 함께 살펴보아야한다 얼마나 높은 점유율을 얼마동안 사용했는지를 통해 부하를 판단해야하니까
