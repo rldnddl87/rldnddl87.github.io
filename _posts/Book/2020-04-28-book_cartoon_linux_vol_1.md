@@ -125,15 +125,14 @@ author_profile: false
   - 필요할때만 실행해서 처리가 끝나면 종료되는 것 : 프로세스
   - 컴퓨터 실행 동안 계속 프로세스를 실행시켜야 하는 것 : 서비스
       - 서비스의 실행,종료는 전용 기동 스크립트를 사용한다.
-      <pre>
-      sudo service apache2 restart //기타 여러 스크립트가 있다.
-      </pre>
+      - <code>sudo service apache2 restart</code> 기타 여러 스크립트가 있다. 
   - load average가 높고 스왑이 많이 발생하여 os의 작동에 문제가 발생할 경우 os가 자체적으로 알아서 프로세스들을 강제 종료 시킨다.
   - 정리하면
       - load average가 높아도 cpu는 과부하 상태가 아닐수가 있다(cpu의 코어가 많을 경우..등)
       - 빈 메모리가 부족 -> 스왑이 자주 발생 -> cpu처리가 쌓이고.. -> load average가 높아짐
   - top 명령어 출력 내용을 정렬해 보자
-      - <code>shift + m //메모리 사용량 순서로 정렬</code>        - <code>shift + t //cpu 시간 순서 정렬</code>
+      - <code>shift + m //메모리 사용량 순서로 정렬</code>        
+      - <code>shift + t //cpu 시간 순서 정렬</code>
       - <code>shift + p //cpu 사용량 순서정렬로 돌아가기</code>
 
 13. __로그 파일에서 필요한 줄만 뽑고 싶어__
