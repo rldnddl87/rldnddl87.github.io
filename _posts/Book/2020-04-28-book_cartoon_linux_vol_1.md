@@ -87,18 +87,18 @@ author_profile: false
   - tmux를 실행하여 화면을 분할할경우 각각의 bash에서 .bash_history파일을 읽어오고 각각의 메모리를 이용하기때문에
      분할 화면간 명령어 실행 내역이 공유되지 않는다.
   - 아래와 같이 설정하여 각각의 분활 tmux bash에서 명령어내역을 공유하도록 설정할 수 있다.
-      <pre>
-      vim ~/.bashrc
-      
-      //add
-      function share_history {
-          history -a
-          history -c
-          history -r
-      }
-      PROMPT_COMMAND='share_history'
-      shopt -u histappend
-      </pre>
+        <pre>
+        vim ~/.bashrc
+        
+        //add
+        function share_history {
+            history -a
+            history -c
+            history -r
+        }
+        PROMPT_COMMAND='share_history'
+        shopt -u histappend
+        </pre>
         
 10. __네트워크 건너서 파일을 복사하고 싶어 (scp)__
   - scp : Secure CoPy(네트워크를 통해서 파일을 복사)
@@ -107,7 +107,7 @@ author_profile: false
   - -r(recursively) 옵션 등을통해 폴더 하위 파일들까지 전부 복사 가능
 
 11. __시스템 과부하를 파악하고 싶어(top)__
-    ![](/assets/images/posts/2020-04-28/top.png){: width="50%"}
+  ![](/assets/images/posts/2020-04-28/top.png){: width="50%"}
   - top 명령어를 통해 현재 시스템 사용 정보를 알 수 있다.
   - 이 중, load average를 통해 부하상태를 쉽게 알 수있다.(CPU가 처리하길 기다리는 작업의 개수를 나타냄, 1분당 평균으로 나타냄)
   - %CPU란과 Time+를 함께 살펴보아야한다 얼마나 높은 점유율을 얼마동안 사용했는지를 통해 부하를 판단해야하니까
@@ -128,9 +128,9 @@ author_profile: false
       - <code>sudo service apache2 restart</code> 기타 여러 스크립트가 있다. 
   - load average가 높고 스왑이 많이 발생하여 os의 작동에 문제가 발생할 경우 os가 자체적으로 알아서 프로세스들을 강제 종료 시킨다.
   - 정리하면
-      - load average가 높아도 cpu는 과부하 상태가 아닐수가 있다(cpu의 코어가 많을 경우..등)
-      - 빈 메모리가 부족 -> 스왑이 자주 발생 -> cpu처리가 쌓이고.. -> load average가 높아짐
-  - top 명령어 출력 내용을 정렬해 보자
+    - load average가 높아도 cpu는 과부하 상태가 아닐수가 있다(cpu의 코어가 많을 경우..등)
+    - 빈 메모리가 부족 -> 스왑이 자주 발생 -> cpu처리가 쌓이고.. -> load average가 높아짐
+    - top 명령어 출력 내용을 정렬해 보자
       - <code>shift + m //메모리 사용량 순서로 정렬</code>        
       - <code>shift + t //cpu 시간 순서 정렬</code>
       - <code>shift + p //cpu 사용량 순서정렬로 돌아가기</code>
